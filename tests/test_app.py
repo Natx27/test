@@ -12,3 +12,8 @@ def client(app):
 def test_homepage(client):
 	response =client.get('/')
 	assert response.status_code == 200
+
+def test_post_name(client):
+	response =client.get('/', data={'name': 'Natalia'})
+	assert response.status_code == 200
+	assert b"witaj, Natalia!" in response.data 
