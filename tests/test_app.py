@@ -11,4 +11,4 @@ def client(app):
 
 def test_homepage(client):
 	response =client.get('/')
-	asert response.status_code == 200
+	assert response.status_code == 200
